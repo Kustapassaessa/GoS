@@ -39,4 +39,4 @@ if UdyrMenu.Drawings.R:Value() then DrawCircle(GoS:myHeroPos().x, GoS:myHeroPos(
 
     end)
 
-	PrintChat("Udyr My First Try")
+	PrintChat("Udyr Plain and Simple")
