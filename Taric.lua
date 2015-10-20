@@ -14,7 +14,7 @@ TaricMenu.Combo:Boolean("R", "Use R", true)
 --Healing
 TaricMenu:SubMenu("Healing", "Healing")
 TaricMenu.Healing:Boolean("Q", "Auto Q", true)
-TaricMenu.Healing:Slider("HealQ", "Q Heal At %", 85, 1, 100, 1)
+TaricMenu.Healing:Slider("HealQ", "Q Heal At %", 60, 1, 100, 1)
 TaricMenu.Healing:Info("Sep", "")
 
 --Drawings
