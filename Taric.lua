@@ -14,7 +14,7 @@ TaricMenu.Combo:Boolean("R", "Use R", true)
 --Healing
 TaricMenu:SubMenu("Healing", "Healing")
 TaricMenu.Healing:Boolean("Q", "Auto Q", true)
-TaricMenu.Healing:Slider("HealQ", "Q Heal At %", 60, 1, 100, 1)
+TaricMenu.Healing:Slider("HealQ", "Q Heal At %", 50, 1, 100, 1)
 TaricMenu.Healing:Info("Sep", "")
 
 --Drawings
@@ -28,10 +28,6 @@ local myHero = GetMyHero()
 
 --Combo
 if IOW:Mode() == "Combo" then
---Use Dazzle
-			if CanUseSpell(myHero, _E) == READY and TaricMenu.Combo.E:Value() and GoS:ValidTarget(target, 625) then
-               CastTargetSpell(target, _E)
-			end
 --Use Shatter
 			if CanUseSpell(myHero, _W) == READY and GoS:ValidTarget(target, 340) and TaricMenu.Combo.W:Value() then
 			   CastSpell(_W)
@@ -39,6 +35,10 @@ if IOW:Mode() == "Combo" then
 --Use Radiance
 			if CanUseSpell(myHero, _R) == READY and GoS:ValidTarget(target, 340) and TaricMenu.Combo.R:Value() then
                CastSpell(_R)
+			end
+--Use Dazzle
+			if CanUseSpell(myHero, _E) == READY and GoS:ValidTarget(target,GetCastRange(myHero,_E)) then
+		   CastTargetSpell(target,_E)
 			end
 
 end
@@ -57,5 +57,7 @@ if TaricMenu.Drawings.W:Value() then DrawCircle(GoS:myHeroPos().x, GoS:myHeroPos
 
 
     end)
+
+GoS:AddGapcloseEvent(_E, 620, true)
 
 	PrintChat("Taric Ruby of Death")
