@@ -58,6 +58,6 @@ if TaricMenu.Drawings.W:Value() then DrawCircle(GoS:myHeroPos().x, GoS:myHeroPos
 
     end)
 
-GoS:AddGapcloseEvent(_E, 620, true)
+GoS:AddGapcloseEvent(_E, 610, true)
 
 	PrintChat("Taric Ruby of Death")
