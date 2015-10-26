@@ -50,3 +50,5 @@ if Taric.Healing.Q:Value() then
 
 if Taric.Drawings.E:Value() then DrawCircle(myHeroPos().x, myHeroPos().y, myHeroPos().z,(GetCastRange(myHero,_E)),3,100,0xff00ff00) end
 end)
+
+AddGapcloseEvent(_E, 610, true)
