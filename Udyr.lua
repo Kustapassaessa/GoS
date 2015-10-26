@@ -1,9 +1,7 @@
 if GetObjectName(GetMyHero()) ~= "Udyr" then return end
 require('Inspired')
 
-local info = "Udyr Plain and Simple by Merda"
-textTable = {info}
-PrintChat(textTable[1])
+PrintChat("Udyr Plain and Simple by Merda")
 
 Udyr = MenuConfig("Plain and Simple", "Udyr")
 
