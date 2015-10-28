@@ -10,8 +10,9 @@ Taric.Combo:Boolean("W", "Use W", true)
 Taric.Combo:Boolean("E", "Use E", true)
 Taric.Combo:Boolean("R", "Use R", true)
 
-Taric:SubMenu("Drawings", "Drawings")
-Taric.Drawings:Boolean("E", "Draw Stun Range", false)
+Taric:Menu("Drawings", "Drawings")
+Taric.Drawings:Boolean("E","Show Stun Range", true)
+Taric.Drawings:Slider("Quality","Circle Quality", 100 , 1, 255, 1)
 
 Taric:SubMenu("Healing", "Healing")
 Taric.Healing:Boolean("Q", "Auto Q", true)
@@ -20,6 +21,12 @@ Taric.Healing:Info("Sep", "")
 
 Taric:Menu("Keys", "Keys")
 Taric.Keys:Key("Combo", "Combo", 32)
+
+OnDraw(function(myHero)
+if Taric.Drawings.E:Value() then
+	DrawCircle(GetOrigin(myHero),625,0,Taric.Drawings.Quality:Value(),0xffffffff)
+end
+end)
 
 OnTick(function(myHero)
 local target = GetCurrentTarget()
@@ -48,7 +55,7 @@ if Taric.Healing.Q:Value() then
                     end
                 end
 
-if Taric.Drawings.E:Value() then DrawCircle(myHeroPos().x, myHeroPos().y, myHeroPos().z,(GetCastRange(myHero,_E)),3,100,0xff00ff00) end
+
 end)
 
 AddGapcloseEvent(_E, 610, true)
