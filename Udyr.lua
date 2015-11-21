@@ -31,7 +31,7 @@ local target = GetCurrentTarget()
 		   CastSpell(_R)
 		end
 		local WPred = GetPredictionForPlayer(myHeroPos(),target,GetMoveSpeed(target),1700,250,900,50,false,true)
-		if CanUseSpell(myHero,_W) == READY and ValidTarget(target, 125) and Udyr.Combo.W:Value() then
+		if CanUseSpell(myHero,_W) == READY and ValidTarget(target, 1555) and Udyr.Combo.W:Value() then
 		   CastSpell(_W)
 		end
 end
